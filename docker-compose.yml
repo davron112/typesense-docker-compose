@@ -15,7 +15,7 @@ services:
     volumes:
       - ${TYPESENSE_ADMIN_DATA_PATH}:/data
 volumes:
-  ${TYPESENSE_CLIENT_DATA_PATH}:
+  "${TYPESENSE_CLIENT_DATA_PATH}":
     driver: local
-  ${TYPESENSE_ADMIN_DATA_PATH}:
+  "${TYPESENSE_ADMIN_DATA_PATH}":
     driver: local
