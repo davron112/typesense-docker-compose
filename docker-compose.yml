@@ -6,16 +6,16 @@ services:
     ports:
       - "${TYPESENSE_PORT_CLIENT}:8108"
     volumes:
-      - ${TYPESENSE_CLIENT_DATA_PATH}:/data
+      - typesense-client-data:/data
   typesense-admin:
     image: typesense/typesense:${TYPESENSE_VERSION}
     entrypoint: sh -c "/opt/typesense-server --data-dir /data --api-key=${TYPESENSE_ADMIN_API_KEY} --enable-cors"
     ports:
       - "${TYPESENSE_PORT_ADMIN}:8108"
     volumes:
-      - ${TYPESENSE_ADMIN_DATA_PATH}:/data
+      - typesense-admin-data:/data
 volumes:
-  "${TYPESENSE_CLIENT_DATA_PATH}":
+  typesense-admin-data:
     driver: local
-  "${TYPESENSE_ADMIN_DATA_PATH}":
+  typesense-client-data:
     driver: local
