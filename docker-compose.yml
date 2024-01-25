@@ -2,7 +2,7 @@ version: "3"
 services:
   typesense:
     image: typesense/typesense:${TYPESENSE_VERSION}
-    entrypoint: sh -c "/opt/typesense-server --data-dir /data --api-key=${TYPESENSE_CLIENT_API_KEY} --enable-cors"
+    entrypoint: sh -c "/opt/typesense-server --data-dir /data --api-key=${TYPESENSE_ROOT_API_KEY} --enable-cors"
     ports:
       - "${TYPESENSE_PORT_CLIENT}:8108"
     volumes:
